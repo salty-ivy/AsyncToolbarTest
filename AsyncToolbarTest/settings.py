@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,6 +73,14 @@ TEMPLATES = [
 
 # WSGI_APPLICATION = 'AsyncToolbarTest.wsgi.application'
 ASGI_APPLICATION = 'AsyncToolbarTest.asgi.application'
+
+# debug_toolbar settings
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+DEBUG_TOOLBAR_CONFIG = {"ROOT_TAG_EXTRA_ATTRS": "data-turbo-permanent hx-preserve"}
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
