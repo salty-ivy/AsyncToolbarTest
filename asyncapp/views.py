@@ -1,8 +1,12 @@
-from django.http import HttpResponse
-# from django.shortcuts import render
-
-# Create your views here.
+from django.views.generic import ListView
+from asyncapp.models import Car
 
 
-def simple_response_view(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+class CarListView(ListView):
+    model = Car
+    template_name = 'cars/car_list.html'
+
+
+
+
+

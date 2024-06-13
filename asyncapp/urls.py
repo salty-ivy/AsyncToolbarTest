@@ -1,9 +1,9 @@
 from django.urls import path
-from asyncapp.views import simple_response_view
+from asyncapp.views import CarListView
 
 app_name = "asyncapp"
 
 urlpatterns = [
-    path('simple-response', simple_response_view, name='simple_response'),
+    path('cars/', CarListView.as_view(), name='car-list'),
 ]
 
