@@ -3,6 +3,7 @@ from django.views.generic import ListView
 from django.shortcuts import render
 from asyncapp.models import Car
 
+
 class CarListView(ListView):
     """
     return a list of cars
