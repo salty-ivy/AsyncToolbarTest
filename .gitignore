@@ -7,7 +7,7 @@ build
 dist
 django_debug_toolbar.egg-info
 docs/_build
-example/db.sqlite3
+db.sqlite3
 htmlcov
 .tox
 geckodriver.log

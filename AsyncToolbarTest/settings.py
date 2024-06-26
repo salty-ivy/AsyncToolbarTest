@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,8 +71,11 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'AsyncToolbarTest.wsgi.application'
-ASGI_APPLICATION = 'AsyncToolbarTest.asgi.application'
+if os.environ.get("ASGI") == "true":
+    ASGI_APPLICATION = 'AsyncToolbarTest.asgi.application'
+    INSTALLED_APPS = ["daphne"] + INSTALLED_APPS
+else:
+    WSGI_APPLICATION = 'AsyncToolbarTest.wsgi.application'
 
 # debug_toolbar settings
 INTERNAL_IPS = [
