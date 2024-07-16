@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'cars.css' %}">
+{% endblock %}
 
 {% block content %}
     <h2>Cars</h2>
