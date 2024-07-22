@@ -57,5 +57,5 @@ async def new_async_view(request):
     context = {'object_list': "car list"}
     print("context in ASYNC car view***: ", id(copy_context()))
     print("thread_id in ASYNC car view***: ", threading.get_ident())
-    await asyncio.sleep(1)
+    # await asyncio.sleep(1)
     return render(request, 'cars/car_list_async.html', context)
